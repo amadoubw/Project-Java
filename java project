@@ -1,0 +1,56 @@
+package mode.console;
+import java.io.File;
+
+public class CLI {
+	    public static void main(String[] args) {
+	    	if(args.length<2) {
+	        
+	    	System.out.println("donner soit un fichiers (-f) ou un répertoires (-d) avec sont chemin");
+	    	
+	    	} else {
+	    		
+	    		
+	            String param = args[0];
+	            String chemin = args[1];
+	            
+	            File file = new File(chemin);
+
+	           
+	            if (param.equals("-d")||param.equals("--directory")) {
+	                if (file.isDirectory()) {
+	                    System.out.println("Le chemin est un répertoire correct : " + chemin);
+	                } else {
+	                    System.out.println("Erreur : Ce chemin n'est pas un répertoire ou n'existe pas : " + chemin);
+	                }
+	            } else if (param.equals("-f")||param.equals("--file")) {
+	                if (file.isFile()) {
+	                    System.out.println("Le chemin est un fichier correct : " + chemin);
+	                } else {
+	                    System.out.println("Erreur : Ce chemin n'est pas un fichier ou n'existe pas : " + chemin);
+	                }
+	            } else {
+	                
+	                System.out.println("Erreur : Paramètre non conforme" + param + "(prenez -d pour répertoires ou -f pour fichiers).");
+	                System.out.println("Paramètre donner : " + param);
+	                System.out.println("Chemin donner : " + chemin);
+	            }
+	        }
+	    }
+	    
+	
+	    
+}
+
+                
+            
+	    
+	    	
+	    
+        
+    
+
+
+
+
+
+
